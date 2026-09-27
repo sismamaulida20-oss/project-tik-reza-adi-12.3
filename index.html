@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GuitarTune AT-TIJAARAH</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <header class="top-header">
+        <div>
+            <h1>GuitarTune</h1>
+            <p>AT-TIJAARAH</p>
+        </div>
+
+        <button id="themeBtn" class="icon-btn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+
+    <main id="homePage" class="page active">
+
+        <section class="hero">
+
+            <div class="guitar-icon">
+                🎸
+            </div>
+
+            <h2>GuitarTune</h2>
+
+            <p class="brand">
+                AT-TIJAARAH
+            </p>
+
+            <p class="tagline">
+                Tune • Learn • Play
+            </p>
+
+            <button
+                class="primary-btn"
+                onclick="openPage('tunerPage')"
+            >
+                <i class="fa-solid fa-microphone"></i>
+                MULAI STEM
+            </button>
+
+            <button
+                class="secondary-btn"
+                onclick="openPage('learnPage')"
+            >
+                <i class="fa-solid fa-book-open"></i>
+                BELAJAR GITAR
+            </button>
+
+        </section>
+
+
+        <section class="card">
+
+            <div class="card-title">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>TIPS HARI INI</span>
+            </div>
+
+            <p id="dailyTip">
+                Latihan gitar sedikit setiap hari akan membantu
+                meningkatkan kemampuanmu.
+            </p>
+
+        </section>
+
+
+        <section class="card motivation">
+
+            <div class="card-title">
+                <i class="fa-solid fa-fire"></i>
+                <span>MOTIVASI</span>
+            </div>
+
+            <p id="dailyMotivation">
+                Jangan takut salah. Setiap petikan adalah bagian
+                dari proses belajar.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= TUNER ================= -->
+
+    <main id="tunerPage" class="page">
+
+        <div class="page-title">
+
+            <button
+                class="back-btn"
+                onclick="openPage('homePage')"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <h2>🎸 Tuner Gitar</h2>
+
+        </div>
+
+
+        <!-- TUNING SELECTOR -->
+
+        <div class="tuning-box">
+
+            <label for="tuningSelect">
+                Pilih Tuning
+            </label>
+
+            <select id="tuningSelect">
+
+                <option value="standard">
+                    Standard — E A D G B E
+                </option>
+
+                <option value="dropd">
+                    Drop D — D A D G B E
+                </option>
+
+                <option value="half">
+                    Half Step Down
+                </option>
+
+                <option value="openg">
+                    Open G
+                </option>
+
+                <option value="opend">
+                    Open D
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- STRING BUTTONS -->
+
+        <div class="strings" id="stringButtons">
+
+            <button class="string active" data-index="0">
+                <small>Senar 6</small>
+                <strong>E</strong>
+            </button>
+
+            <button class="string" data-index="1">
+                <small>Senar 5</small>
+                <strong>A</strong>
+            </button>
+
+            <button class="string" data-index="2">
+                <small>Senar 4</small>
+                <strong>D</strong>
+            </button>
+
+            <button class="string" data-index="3">
+                <small>Senar 3</small>
+                <strong>G</strong>
+            </button>
+
+            <button class="string" data-index="4">
+                <small>Senar 2</small>
+                <strong>B</strong>
+            </button>
+
+            <button class="string" data-index="5">
+                <small>Senar 1</small>
+                <strong>E</strong>
+            </button>
+
+        </div>
+
+
+        <!-- TUNER -->
+
+        <section class="tuner">
+
+            <p class="selected-label">
+                SENAR 6
+            </p>
+
+            <div class="note">
+                E
+            </div>
+
+            <div class="meter">
+
+                <span class="left">
+                    ♭
+                </span>
+
+                <div class="meter-line">
+
+                    <div class="center-line"></div>
+
+                    <div
+                        id="needle"
+                        class="needle"
+                    ></div>
+
+                </div>
+
+                <span class="right">
+                    ♯
+                </span>
+
+            </div>
+
+            <div id="cents">
+                0 cents
+            </div>
+
+            <div
+                id="tunerStatus"
+                class="status"
+            >
+                SIAP DIGUNAKAN
+            </div>
+
+            <div
+                id="frequency"
+                class="frequency"
+            >
+                0.00 Hz
+            </div>
+
+        </section>
+
+
+        <!-- START BUTTON -->
+
+        <button
+            id="tunerBtn"
+            class="primary-btn"
+        >
+            <i class="fa-solid fa-microphone"></i>
+            MULAI TUNER
+        </button>
+
+
+        <!-- REFERENCE -->
+
+        <section class="card">
+
+            <h3>
+                🔊 Nada Referensi
+            </h3>
+
+            <div
+                id="referenceButtons"
+                class="reference-buttons"
+            ></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= CHORD ================= -->
+
+    <main id="chordPage" class="page">
+
+        <div class="page-title">
+
+            <h2>🎼 Chord Gitar</h2>
+
+        </div>
+
+        <div
+            id="chordList"
+            class="chord-list"
+        ></div>
+
+    </main>
+
+
+    <!-- ================= LEARN ================= -->
+
+    <main id="learnPage" class="page">
+
+        <div class="page-title">
+
+            <button
+                class="back-btn"
+                onclick="openPage('homePage')"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <h2>📚 Belajar Gitar</h2>
+
+        </div>
+
+        <div id="lessonList"></div>
+
+    </main>
+
+
+    <!-- ================= TIPS ================= -->
+
+    <main id="tipsPage" class="page">
+
+        <div class="page-title">
+
+            <h2>💡 Tips Gitar</h2>
+
+        </div>
+
+        <div id="tipsList"></div>
+
+    </main>
+
+
+    <!-- ================= SETTINGS ================= -->
+
+    <main id="settingsPage" class="page">
+
+        <div class="page-title">
+
+            <h2>⚙️ Pengaturan</h2>
+
+        </div>
+
+        <section class="setting">
+
+            <div>
+
+                <strong>
+                    🌙 Dark Mode
+                </strong>
+
+                <p>
+                    Gunakan tampilan gelap
+                </p>
+
+            </div>
+
+            <label class="switch">
+
+                <input
+                    type="checkbox"
+                    id="darkToggle"
+                    checked
+                >
+
+                <span></span>
+
+            </label>
+
+        </section>
+
+
+        <section class="card">
+
+            <h3>
+                🎸 GuitarTune AT-TIJAARAH
+            </h3>
+
+            <p>
+                Tune • Learn • Play
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= BOTTOM NAV ================= -->
+
+    <nav class="bottom-nav">
+
+        <button
+            class="nav-btn active"
+            data-page="homePage"
+        >
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </button>
+
+        <button
+            class="nav-btn"
+            data-page="tunerPage"
+        >
+            <i class="fa-solid fa-guitar"></i>
+            <span>Tuner</span>
+        </button>
+
+        <button
+            class="nav-btn"
+            data-page="chordPage"
+        >
+            <i class="fa-solid fa-music"></i>
+            <span>Chord</span>
+        </button>
+
+        <button
+            class="nav-btn"
+            data-page="tipsPage"
+        >
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Tips</span>
+        </button>
+
+        <button
+            class="nav-btn"
+            data-page="settingsPage"
+        >
+            <i class="fa-solid fa-gear"></i>
+            <span>Setelan</span>
+        </button>
+
+    </nav>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,539 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #101010;
+    --surface: #1b1b1b;
+    --surface2: #242424;
+    --text: #ffffff;
+    --muted: #9e9e9e;
+    --gold: #ffb300;
+    --orange: #ff8f00;
+    --danger: #ff5252;
+    --success: #32d583;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+button,
+select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    width: 100%;
+    max-width: 500px;
+    min-height: 100vh;
+    margin: auto;
+    background: var(--bg);
+    position: relative;
+    padding-bottom: 90px;
+}
+
+
+/* HEADER */
+
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 20px 12px;
+}
+
+.top-header h1 {
+    font-size: 23px;
+}
+
+.top-header p {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.icon-btn {
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--gold);
+}
+
+
+/* PAGES */
+
+.page {
+    display: none;
+    padding: 15px 20px;
+}
+
+.page.active {
+    display: block;
+}
+
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    padding: 35px 10px;
+}
+
+.guitar-icon {
+    font-size: 75px;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 35px;
+}
+
+.brand {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.tagline {
+    color: var(--muted);
+    margin: 8px 0 28px;
+}
+
+
+/* BUTTON */
+
+.primary-btn,
+.secondary-btn {
+    width: 100%;
+    min-height: 55px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 12px;
+}
+
+.primary-btn {
+    background: linear-gradient(
+        135deg,
+        var(--gold),
+        var(--orange)
+    );
+
+    color: #111;
+}
+
+.secondary-btn {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid #333;
+}
+
+.primary-btn:active,
+.secondary-btn:active {
+    transform: scale(.98);
+}
+
+
+/* CARD */
+
+.card {
+    background: var(--surface);
+    border-radius: 18px;
+    padding: 18px;
+    margin: 14px 0;
+}
+
+.card-title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: var(--gold);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #d0d0d0;
+    line-height: 1.6;
+}
+
+
+/* PAGE TITLE */
+
+.page-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.page-title h2 {
+    font-size: 25px;
+}
+
+.back-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+}
+
+
+/* TUNING */
+
+.tuning-box {
+    background: var(--surface);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.tuning-box label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--muted);
+}
+
+.tuning-box select {
+    width: 100%;
+    padding: 13px;
+    background: var(--surface2);
+    color: white;
+    border: 1px solid #444;
+    border-radius: 10px;
+}
+
+
+/* STRINGS */
+
+.strings {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+}
+
+.string {
+    border: none;
+    border-radius: 10px;
+    background: var(--surface);
+    color: white;
+    padding: 9px 2px;
+}
+
+.string small {
+    display: block;
+    color: var(--muted);
+    font-size: 8px;
+}
+
+.string strong {
+    font-size: 18px;
+}
+
+.string.active {
+    background: var(--gold);
+    color: #111;
+}
+
+.string.active small {
+    color: #222;
+}
+
+
+/* TUNER */
+
+.tuner {
+    text-align: center;
+    background: var(--surface);
+    border-radius: 25px;
+    padding: 30px 15px;
+    margin: 18px 0;
+}
+
+.selected-label {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.note {
+    font-size: 80px;
+    font-weight: bold;
+    color: var(--gold);
+    margin: 5px 0;
+}
+
+.meter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.meter span {
+    font-size: 22px;
+}
+
+.left {
+    color: #42a5f5;
+}
+
+.right {
+    color: #ff7043;
+}
+
+.meter-line {
+    flex: 1;
+    height: 8px;
+    background: #444;
+    border-radius: 20px;
+    position: relative;
+}
+
+.center-line {
+    width: 4px;
+    height: 25px;
+    background: white;
+    position: absolute;
+    left: 50%;
+    top: -9px;
+    transform: translateX(-50%);
+}
+
+.needle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--gold);
+    left: 50%;
+    top: -4px;
+    transform: translateX(-50%);
+    transition: left .2s ease;
+}
+
+#cents {
+    font-size: 18px;
+    margin-top: 18px;
+}
+
+.status {
+    margin-top: 10px;
+    color: var(--success);
+    font-weight: bold;
+}
+
+.frequency {
+    margin-top: 8px;
+    color: var(--muted);
+}
+
+
+/* REFERENCE */
+
+.reference-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.reference-buttons button {
+    background: var(--surface2);
+    color: white;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+
+/* CHORD */
+
+.chord-list {
+    display: grid;
+    gap: 12px;
+}
+
+.chord {
+    background: var(--surface);
+    padding: 17px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.chord-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--gold);
+    width: 55px;
+}
+
+
+/* LESSON */
+
+.lesson {
+    background: var(--surface);
+    border-radius: 15px;
+    padding: 18px;
+    margin-bottom: 12px;
+}
+
+.lesson strong {
+    font-size: 16px;
+}
+
+.lesson p {
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+
+/* SETTINGS */
+
+.setting {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.setting p {
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+
+/* SWITCH */
+
+.switch {
+    position: relative;
+    width: 50px;
+    height: 28px;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch span {
+    position: absolute;
+    inset: 0;
+    background: #555;
+    border-radius: 20px;
+}
+
+.switch span::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 3px;
+    top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: .2s;
+}
+
+.switch input:checked + span {
+    background: var(--gold);
+}
+
+.switch input:checked + span::before {
+    transform: translateX(22px);
+}
+
+
+/* BOTTOM NAV */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(500px, 100%);
+    height: 75px;
+    background: #181818;
+    border-top: 1px solid #303030;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    z-index: 100;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: #777;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+}
+
+.nav-btn i {
+    font-size: 18px;
+}
+
+.nav-btn.active {
+    color: var(--gold);
+}
+
+
+/* LIGHT MODE */
+
+body.light {
+    --bg: #f5f5f5;
+    --surface: #ffffff;
+    --surface2: #eeeeee;
+    --text: #151515;
+    --muted: #666;
+}
+
+body.light .bottom-nav {
+    background: white;
+}
+
+body.light .tuning-box select,
+body.light .reference-buttons button {
+    color: #111;
+}
+
+body.light .string {
+    color: #111;
+}
+
+body.light .string.active {
+    color: #111;
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 700px) {
+
+    body {
+        background: #080808;
+    }
+
+    .app {
+        box-shadow: 0 0 50px rgba(0,0,0,.5);
+    }
+}
